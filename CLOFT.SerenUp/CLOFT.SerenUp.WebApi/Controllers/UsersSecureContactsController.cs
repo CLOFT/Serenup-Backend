@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CLOFT.SerenUp.WebApi.Controllers;
 
-[Route("[controller]")]
+[Route("api/[controller]")]
 [ApiController]
 public class UsersSecureContactsController : ControllerBase
 {
