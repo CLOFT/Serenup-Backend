@@ -7,7 +7,7 @@ namespace CLOFT.SerenUp.WebApi.Controllers;
 [ApiController]
 public class UsersSecureContactsController : ControllerBase
 {
-    // GET /?username = 
+    // GET /username
     [HttpGet("{username}")]
     public Task<IEnumerable<UserSecureContact>> GetByUsername(string username)
     {
