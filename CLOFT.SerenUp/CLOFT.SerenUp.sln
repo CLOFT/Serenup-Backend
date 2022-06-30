@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLOFT.SerenUp.Domain", "CLOFT.SerenUp.Domain\CLOFT.SerenUp.Domain.csproj", "{40A12464-1405-4F99-9937-B7ADA89CF4D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLOFT.SerenUp.AppCore", "CLOFT.SerenUp.AppCore\CLOFT.SerenUp.AppCore.csproj", "{62EC424F-EC9F-492A-8024-4200297ADBBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLOFT.SerenUp.Infrastructure", "CLOFT.SerenUp.Infrastructure\CLOFT.SerenUp.Infrastructure.csproj", "{4CA0A554-B814-4A89-A925-DBF20D635A68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLOFT.SerenUp.WebApi", "CLOFT.SerenUp.WebApi\CLOFT.SerenUp.WebApi.csproj", "{C691F7D2-4E3E-403B-B985-20FC0326B9AA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{40A12464-1405-4F99-9937-B7ADA89CF4D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40A12464-1405-4F99-9937-B7ADA89CF4D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40A12464-1405-4F99-9937-B7ADA89CF4D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40A12464-1405-4F99-9937-B7ADA89CF4D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62EC424F-EC9F-492A-8024-4200297ADBBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62EC424F-EC9F-492A-8024-4200297ADBBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62EC424F-EC9F-492A-8024-4200297ADBBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62EC424F-EC9F-492A-8024-4200297ADBBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CA0A554-B814-4A89-A925-DBF20D635A68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CA0A554-B814-4A89-A925-DBF20D635A68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CA0A554-B814-4A89-A925-DBF20D635A68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CA0A554-B814-4A89-A925-DBF20D635A68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C691F7D2-4E3E-403B-B985-20FC0326B9AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C691F7D2-4E3E-403B-B985-20FC0326B9AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C691F7D2-4E3E-403B-B985-20FC0326B9AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C691F7D2-4E3E-403B-B985-20FC0326B9AA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
