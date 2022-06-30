@@ -2,7 +2,7 @@
 
 namespace CLOFT.SerenUp.Domain.Models;
 
-[Map("UserSecureContacts")]
+[Map("UsersSecureContacts")]
 public class UserSecureContact
 {
     public Guid Id { get; set; }
