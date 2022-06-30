@@ -12,7 +12,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
+      <ProjectReference Include="..\CLOFT.SerenUp.AppCore\CLOFT.SerenUp.AppCore.csproj" />
+      <ProjectReference Include="..\CLOFT.SerenUp.Domain\CLOFT.SerenUp.Domain.csproj" />
+      <ProjectReference Include="..\CLOFT.SerenUp.Infrastructure\CLOFT.SerenUp.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
