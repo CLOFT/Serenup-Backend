@@ -1,5 +1,8 @@
-﻿namespace CLOFT.SerenUp.Domain.Models;
+﻿using RepoDb.Attributes;
 
+namespace CLOFT.SerenUp.Domain.Models;
+
+[Map("Bracelets")]
 public class Bracelet
 {
     public Guid SerialNumber { get; set; }

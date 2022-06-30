@@ -1,5 +1,8 @@
-﻿namespace CLOFT.SerenUp.Domain.Models;
+﻿using RepoDb.Attributes;
 
+namespace CLOFT.SerenUp.Domain.Models;
+
+[Map("DailyAnalyses")]
 public class DailyAnalysis
 {
     public Guid Id { get; set; }

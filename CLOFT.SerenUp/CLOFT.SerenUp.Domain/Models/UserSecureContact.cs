@@ -1,5 +1,8 @@
-﻿namespace CLOFT.SerenUp.Domain.Models;
+﻿using RepoDb.Attributes;
 
+namespace CLOFT.SerenUp.Domain.Models;
+
+[Map("UserSecureContacts")]
 public class UserSecureContact
 {
     public Guid Id { get; set; }

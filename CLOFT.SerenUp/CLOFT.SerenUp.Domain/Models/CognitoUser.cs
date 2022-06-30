@@ -1,5 +1,8 @@
-﻿namespace CLOFT.SerenUp.Domain.Models;
+﻿using RepoDb.Attributes;
 
+namespace CLOFT.SerenUp.Domain.Models;
+
+[Map("CognitoUsers")]
 public class CognitoUser
 {
     public CognitoUser(string username)
