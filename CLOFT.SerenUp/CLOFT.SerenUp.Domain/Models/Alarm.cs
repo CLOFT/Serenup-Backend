@@ -1,4 +1,5 @@
-﻿using RepoDb.Attributes;
+﻿using System.Text.Json.Serialization;
+using RepoDb.Attributes;
 
 namespace CLOFT.SerenUp.Domain.Models;
 
@@ -10,9 +11,8 @@ public class Alarm
     public string Type { get; set; }
     public int? Value { get; set; }
     public DateTime Timestamp { get; set; }
-    
+
     public Alarm()
     {
-        
     }
 }
