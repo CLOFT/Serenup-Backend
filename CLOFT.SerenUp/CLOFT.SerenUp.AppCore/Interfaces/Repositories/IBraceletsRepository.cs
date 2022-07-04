@@ -1,6 +1,8 @@
-﻿namespace CLOFT.SerenUp.AppCore.Interfaces.Repositories;
+﻿using CLOFT.SerenUp.Domain.Models;
 
-public interface IBraceletsRepository
+namespace CLOFT.SerenUp.AppCore.Interfaces.Repositories;
+
+public interface IBraceletsRepository : IRepositoryBase<Bracelet, Guid>
 {
     
 }

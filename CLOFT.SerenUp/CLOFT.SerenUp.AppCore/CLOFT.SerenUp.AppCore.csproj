@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\CLOFT.SerenUp.Domain\CLOFT.SerenUp.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

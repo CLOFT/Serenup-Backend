@@ -1,4 +1,4 @@
-﻿namespace CLOFT.SerenUp.AppCore.Interfaces;
+﻿namespace CLOFT.SerenUp.AppCore.Interfaces.Repositories;
 
 public interface IRepositoryBase<TEntity, TPrimaryKey>
 {
