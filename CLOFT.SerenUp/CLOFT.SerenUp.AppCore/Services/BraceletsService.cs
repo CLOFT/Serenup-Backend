@@ -13,9 +13,10 @@ public class BraceletsService : IBraceletsService
         _braceletsRepository = braceletsRepository;
     }
 
-    public Task<IEnumerable<Bracelet>> GetAllBraceletsAsync()
+    public async Task<IEnumerable<Bracelet>> GetAllBraceletsAsync()
     {
-        throw new NotImplementedException();
+        var list = await _braceletsRepository.GetAllAsync();
+        return list;
     }
 
     public async Task<Bracelet> GetBraceletAsync(Guid id)

@@ -1,4 +1,5 @@
-﻿using CLOFT.SerenUp.Domain.Models;
+﻿using CLOFT.SerenUp.AppCore.Interfaces.Services;
+using CLOFT.SerenUp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CLOFT.SerenUp.WebApi.Controllers;
@@ -7,36 +8,34 @@ namespace CLOFT.SerenUp.WebApi.Controllers;
 [ApiController]
 public class BraceletsController : ControllerBase
 {
-    private readonly string[] _colors = {"red", "green", "black"};
-    public const int BRACELETS_NUMBER = 100;
+    private readonly IBraceletsService _braceletsService;
 
-// GET /
-    [HttpGet]
-    public Task<IEnumerable<Bracelet>> Get()
+    public BraceletsController(IBraceletsService braceletsService)
     {
-        // MOCK Bracelets
-        var list = new List<Bracelet>();
-        for (int i = 0; i < BRACELETS_NUMBER; i++)
-        {
-            list.Add(new Bracelet
-            {
-                Color = _colors[new Random().Next(3)],
-                SerialNumber = Guid.NewGuid()
-            });
-        }
+        _braceletsService = braceletsService;
+    }
 
-        return Task.FromResult<IEnumerable<Bracelet>>(list);
+    // GET /
+    [HttpGet]
+    public async Task<IEnumerable<Bracelet>> Get()
+    {
+        var bracelets = await _braceletsService.GetAllBraceletsAsync();
+        return bracelets;
     }
 
     // GET /id
     [HttpGet("{id}")]
-    public Task<Bracelet> GetById(Guid id)
+    public async Task<Bracelet> GetById(Guid id)
     {
-        return Task.FromResult(new Bracelet
-        {
-            SerialNumber = id,
-            Color = "red",
-            Username = "test"
-        });
+        var result = await _braceletsService.GetBraceletAsync(id);
+        return result;
+    }
+
+    // POST 
+    [HttpPost]
+    public async Task<ActionResult<Bracelet>> Create(Bracelet bracelet)
+    {
+        var result = await _braceletsService.InsertBraceletAsync(bracelet);
+        return Ok(result);
     }
 }

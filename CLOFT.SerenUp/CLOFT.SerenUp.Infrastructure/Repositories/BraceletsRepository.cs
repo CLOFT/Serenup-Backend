@@ -15,9 +15,11 @@ public class BraceletsRepository : IBraceletsRepository
         _configuration = configuration;
     }
 
-    public Task<IEnumerable<Bracelet>> GetAllAsync()
+    public async Task<IEnumerable<Bracelet>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var cs = _configuration.GetSection("ConnectionString").Value;
+        using var DB = new NpgsqlConnection(cs);
+        return await DB.QueryAllAsync<Bracelet>();
     }
 
     public async Task<Bracelet> GetAsync(Guid id)
