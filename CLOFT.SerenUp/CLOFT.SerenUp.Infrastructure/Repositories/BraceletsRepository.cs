@@ -50,4 +50,11 @@ public class BraceletsRepository : IBraceletsRepository
         using var DB = new NpgsqlConnection(cs);
         return await DB.CountAllAsync<Bracelet>();
     }
+
+    public async Task<Bracelet> GetByUsernameAsync(string username)
+    {
+        var cs = _configuration.GetSection("ConnectionString").Value;
+        using var DB = new NpgsqlConnection(cs);
+        return (await DB.QueryAsync<Bracelet>(b => b.Username == username)).FirstOrDefault();
+    }
 }
