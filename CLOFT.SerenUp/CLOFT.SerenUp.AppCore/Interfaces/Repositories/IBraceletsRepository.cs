@@ -4,5 +4,5 @@ namespace CLOFT.SerenUp.AppCore.Interfaces.Repositories;
 
 public interface IBraceletsRepository : IRepositoryBase<Bracelet, Guid>
 {
-    
+    Task<Bracelet> GetByUsernameAsync(string username);
 }
