@@ -35,7 +35,8 @@ public class BraceletsController : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Bracelet>> Create(Bracelet bracelet)
     {
-        var result = await _braceletsService.InsertBraceletAsync(bracelet);
+        var id = await _braceletsService.InsertBraceletAsync(bracelet);
+        var result = await _braceletsService.GetBraceletAsync(id);
         return Ok(result);
     }
 }
