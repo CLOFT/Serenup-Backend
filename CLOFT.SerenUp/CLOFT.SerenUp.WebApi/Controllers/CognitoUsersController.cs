@@ -16,6 +16,7 @@ public class CognitoUsersController : ControllerBase
     }
     
     // POST /
+    [HttpPost]
     public async Task<ActionResult<CognitoUser>> Create(CognitoUser cognitoUser)
     {
         var id = await _cognitoUsersService.InsertUserAsync(cognitoUser);
