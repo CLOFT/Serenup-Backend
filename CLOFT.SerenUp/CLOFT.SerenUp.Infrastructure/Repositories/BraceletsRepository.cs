@@ -36,9 +36,11 @@ public class BraceletsRepository : IBraceletsRepository
         return await DB.InsertAsync<Bracelet, Guid>(entity);
     }
 
-    public Task<Guid> UpdateAsync(Bracelet entity)
+    public async Task<Guid> UpdateAsync(Bracelet entity)
     {
-        throw new NotImplementedException();
+        var cs = _configuration.GetSection("ConnectionString").Value;
+        using var DB = new NpgsqlConnection(cs);
+        return (await DB.UpdateAsync(entity) > 0) ? entity.SerialNumber : Guid.Empty;
     }
 
     public Task DeleteAsync(Guid id)
