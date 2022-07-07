@@ -1,4 +1,5 @@
-﻿using CLOFT.SerenUp.Domain.Models;
+﻿using CLOFT.SerenUp.AppCore.Interfaces.Services;
+using CLOFT.SerenUp.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CLOFT.SerenUp.WebApi.Controllers;
@@ -7,12 +8,29 @@ namespace CLOFT.SerenUp.WebApi.Controllers;
 [ApiController]
 public class AlarmsController : ControllerBase
 {
+    private readonly IAlarmsService _alarmsService;
+
+    public AlarmsController(IAlarmsService alarmsService)
+    {
+        _alarmsService = alarmsService;
+    }
+    
+    // GET / 
+    [HttpGet]
+    public async Task<IEnumerable<Alarm>> GetAll()
+    {
+        var list = await _alarmsService.GetAllAlarmsAsync();
+        return list;
+    }
+
     // POST /
     [HttpPost]
-    public Task<IActionResult> Create(Alarm alarm)
+    public async Task<ActionResult<Alarm>> Create(Alarm alarm)
     {
-        // MOCK Insert
-        var list = new List<Alarm> {alarm};
-        return Task.FromResult<IActionResult>(Ok(alarm));
+        var id = await _alarmsService.InsertAlarmAsync(alarm);
+        if (id != null)
+            return Ok(alarm);
+        return null;
     }
+    
 }

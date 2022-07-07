@@ -20,7 +20,8 @@ builder.Services.AddSwaggerGen();
 // Config singleton
 builder.Services.AddSingleton<IBraceletsRepository, BraceletsRepository>();
 builder.Services.AddSingleton<IBraceletsService, BraceletsService>();
-
+builder.Services.AddSingleton<IAlarmsRepository, AlarmsRepository>();
+builder.Services.AddSingleton<IAlarmsService, AlarmsService>();
 
 // Add AWS Lambda Hosting
 builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
