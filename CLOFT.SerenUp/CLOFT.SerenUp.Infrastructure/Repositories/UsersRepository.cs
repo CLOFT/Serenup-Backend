@@ -6,33 +6,33 @@ using RepoDb;
 
 namespace CLOFT.SerenUp.Infrastructure.Repositories;
 
-public class CognitoUsersRepository : ICognitoUsersRepository
+public class UsersRepository : IUsersRepository
 {
     private readonly IConfiguration _configuration;
 
-    public CognitoUsersRepository(IConfiguration configuration)
+    public UsersRepository(IConfiguration configuration)
     {
         _configuration = configuration;
     }
 
-    public Task<IEnumerable<CognitoUser>> GetAllAsync()
+    public Task<IEnumerable<User>> GetAllAsync()
     {
         throw new NotImplementedException();
     }
 
-    public Task<CognitoUser> GetAsync(string id)
+    public Task<User> GetAsync(string id)
     {
         throw new NotImplementedException();
     }
 
-    public async Task<string> InsertAsync(CognitoUser entity)
+    public async Task<string> InsertAsync(User entity)
     {
         var cs = _configuration.GetSection("ConnectionString").Value;
         using var DB = new NpgsqlConnection(cs);
-        return await DB.InsertAsync<CognitoUser, string>(entity);
+        return await DB.InsertAsync<User, string>(entity);
     }
 
-    public Task<string> UpdateAsync(CognitoUser entity)
+    public Task<string> UpdateAsync(User entity)
     {
         throw new NotImplementedException();
     }

@@ -2,7 +2,7 @@
 
 namespace CLOFT.SerenUp.AppCore.Interfaces.Repositories;
 
-public interface ICognitoUsersRepository : IRepositoryBase<CognitoUser, string>
+public interface IUsersRepository : IRepositoryBase<User, string>
 {
     
 }

@@ -4,18 +4,18 @@ using CLOFT.SerenUp.Domain.Models;
 
 namespace CLOFT.SerenUp.AppCore.Services;
 
-public class CognitoUsersService : ICognitoUsersService
+public class UsersService : IUsersService
 {
-    private readonly ICognitoUsersRepository _cognitoUsersRepository;
+    private readonly IUsersRepository _usersRepository;
 
-    public CognitoUsersService(ICognitoUsersRepository cognitoUsersRepository)
+    public UsersService(IUsersRepository usersRepository)
     {
-        _cognitoUsersRepository = cognitoUsersRepository;
+        _usersRepository = usersRepository;
     }
 
-    public async Task<string> InsertUserAsync(CognitoUser entity)
+    public async Task<string> InsertUserAsync(User entity)
     {
-        var id = await _cognitoUsersRepository.InsertAsync(entity);
+        var id = await _usersRepository.InsertAsync(entity);
         return id;
     }
 }

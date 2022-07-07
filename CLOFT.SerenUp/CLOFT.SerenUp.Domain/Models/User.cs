@@ -2,10 +2,10 @@
 
 namespace CLOFT.SerenUp.Domain.Models;
 
-[Map("CognitoUsers")]
-public class CognitoUser
+[Map("Users")]
+public class User
 {
-    public CognitoUser(string username)
+    public User(string username)
     {
         Username = username;
     }

@@ -2,7 +2,7 @@
 
 namespace CLOFT.SerenUp.AppCore.Interfaces.Services;
 
-public interface ICognitoUsersService
+public interface IUsersService
 {
-    Task<string> InsertUserAsync(CognitoUser entity);
+    Task<string> InsertUserAsync(User entity);
 }

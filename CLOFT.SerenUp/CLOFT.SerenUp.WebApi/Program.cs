@@ -22,8 +22,8 @@ builder.Services.AddSingleton<IBraceletsRepository, BraceletsRepository>();
 builder.Services.AddSingleton<IBraceletsService, BraceletsService>();
 builder.Services.AddSingleton<IAlarmsRepository, AlarmsRepository>();
 builder.Services.AddSingleton<IAlarmsService, AlarmsService>();
-builder.Services.AddSingleton<ICognitoUsersRepository, CognitoUsersRepository>();
-builder.Services.AddSingleton<ICognitoUsersService, CognitoUsersService>();
+builder.Services.AddSingleton<IUsersRepository, UsersRepository>();
+builder.Services.AddSingleton<IUsersService, UsersService>();
 
 // Add AWS Lambda Hosting
 builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
