@@ -13,6 +13,12 @@ public class UsersService : IUsersService
         _usersRepository = usersRepository;
     }
 
+    public async Task<IEnumerable<User>> GetAllUsersAsync()
+    {
+        var list = await _usersRepository.GetAllAsync();
+        return list;
+    }
+
     public async Task<string> InsertUserAsync(User entity)
     {
         var id = await _usersRepository.InsertAsync(entity);

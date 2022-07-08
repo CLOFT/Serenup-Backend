@@ -14,7 +14,15 @@ public class UsersController : ControllerBase
     {
         _usersService = usersService;
     }
-    
+
+    // GET /
+    [HttpGet]
+    public async Task<IEnumerable<User>> GetAll()
+    {
+        var list = await _usersService.GetAllUsersAsync();
+        return list;
+    }
+
     // POST /
     [HttpPost]
     public async Task<ActionResult<User>> Create(User user)

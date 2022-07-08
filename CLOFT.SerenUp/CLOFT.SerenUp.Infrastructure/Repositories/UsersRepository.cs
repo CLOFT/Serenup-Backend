@@ -15,9 +15,11 @@ public class UsersRepository : IUsersRepository
         _configuration = configuration;
     }
 
-    public Task<IEnumerable<User>> GetAllAsync()
+    public async Task<IEnumerable<User>> GetAllAsync()
     {
-        throw new NotImplementedException();
+        var cs = _configuration.GetSection("ConnectionString").Value;
+        using var DB = new NpgsqlConnection(cs);
+        return await DB.QueryAllAsync<User>();
     }
 
     public Task<User> GetAsync(string id)
