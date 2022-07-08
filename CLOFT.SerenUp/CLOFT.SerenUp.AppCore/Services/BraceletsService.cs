@@ -45,8 +45,9 @@ public class BraceletsService : IBraceletsService
         }
     }
 
-    public Task<Guid> UpdateBraceletAsync(Bracelet entity)
+    public async Task<Guid> UpdateBraceletAsync(Bracelet entity)
     {
-        throw new NotImplementedException();
+        var id = await _braceletsRepository.UpdateAsync(entity);
+        return id;
     }
 }
