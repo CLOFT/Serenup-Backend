@@ -7,6 +7,7 @@ public class Bracelet
 {
     public Guid SerialNumber { get; set; }
     public string? Username { get; set; }
+    public int? Serendipity { get; set; }
     public string Color { get; set; }
 
     public Bracelet()
