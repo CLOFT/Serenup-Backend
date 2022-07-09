@@ -14,13 +14,21 @@ public class AlarmsController : ControllerBase
     {
         _alarmsService = alarmsService;
     }
-    
+
     // GET / 
     [HttpGet]
     public async Task<IEnumerable<Alarm>> GetAll()
     {
         var list = await _alarmsService.GetAllAlarmsAsync();
         return list;
+    }
+
+    // GET /Count
+    [HttpGet("Count")]
+    public async Task<long> Count()
+    {
+        var count = await _alarmsService.CountAlarmsAsync();
+        return count;
     }
 
     // POST /
@@ -32,5 +40,4 @@ public class AlarmsController : ControllerBase
             return Ok(alarm);
         return null;
     }
-    
 }
