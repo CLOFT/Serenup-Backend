@@ -19,6 +19,12 @@ public class UsersService : IUsersService
         return list;
     }
 
+    public async Task<User> GetUserByIdAsync(string username)
+    {
+        var user = await _usersRepository.GetAsync(username);
+        return user;
+    }
+
     public async Task<string> InsertUserAsync(User entity)
     {
         var id = await _usersRepository.InsertAsync(entity);

@@ -22,9 +22,11 @@ public class UsersRepository : IUsersRepository
         return await DB.QueryAllAsync<User>();
     }
 
-    public Task<User> GetAsync(string id)
+    public async Task<User> GetAsync(string id)
     {
-        throw new NotImplementedException();
+        var cs = _configuration.GetSection("ConnectionString").Value;
+        using var DB = new NpgsqlConnection(cs);
+        return (await DB.QueryAsync<User>(u => u.Username == id)).FirstOrDefault();
     }
 
     public async Task<string> InsertAsync(User entity)

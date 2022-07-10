@@ -23,6 +23,14 @@ public class UsersController : ControllerBase
         return list;
     }
 
+    // GET /{username}
+    [HttpGet("{username}")]
+    public async Task<User> Get(string username)
+    {
+        var user = await _usersService.GetUserByIdAsync(username);
+        return user;
+    }
+    
     // POST /
     [HttpPost]
     public async Task<ActionResult<User>> Create(User user)
