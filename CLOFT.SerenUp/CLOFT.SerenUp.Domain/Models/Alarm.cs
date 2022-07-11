@@ -10,7 +10,7 @@ public class Alarm
     public Guid BraceletId { get; set; }
     public string Type { get; set; }
     public int? Value { get; set; }
-    public DateTime Timestamp { get; set; }
+    public DateTime Time { get; set; }
 
     public Alarm()
     {

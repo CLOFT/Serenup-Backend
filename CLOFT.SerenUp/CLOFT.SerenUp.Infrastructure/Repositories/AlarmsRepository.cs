@@ -55,6 +55,6 @@ public class AlarmsRepository : IAlarmsRepository
     {
         var cs = _configuration.GetSection("ConnectionString").Value;
         using var DB = new NpgsqlConnection(cs);
-        return await DB.CountAsync<Alarm>(a => a.Timestamp >= DateTime.UtcNow.AddDays(-1));
+        return await DB.CountAsync<Alarm>(a => a.Time >= DateTime.UtcNow.AddDays(-1));
     }
 }
