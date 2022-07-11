@@ -31,6 +31,14 @@ public class AlarmsController : ControllerBase
         return count;
     }
 
+    // GET /LastDayCount
+    [HttpGet("LastDayCount")]
+    public async Task<long> LastDayCount()
+    {
+        var count = await _alarmsService.CountLastDayAlarmsAsync();
+        return count;
+    }
+
     // POST /
     [HttpPost]
     public async Task<ActionResult<Alarm>> Create(Alarm alarm)

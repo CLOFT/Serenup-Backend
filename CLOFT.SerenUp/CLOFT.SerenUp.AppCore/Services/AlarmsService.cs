@@ -30,4 +30,10 @@ public class AlarmsService : IAlarmsService
         var count = await _alarmsRepository.CountAsync();
         return count;
     }
+
+    public async Task<long> CountLastDayAlarmsAsync()
+    {
+        var count = await _alarmsRepository.CountLastDayAsync();
+        return count;
+    }
 }

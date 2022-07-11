@@ -50,4 +50,11 @@ public class AlarmsRepository : IAlarmsRepository
         using var DB = new NpgsqlConnection(cs);
         return await DB.CountAllAsync<Alarm>();
     }
+
+    public async Task<long> CountLastDayAsync()
+    {
+        var cs = _configuration.GetSection("ConnectionString").Value;
+        using var DB = new NpgsqlConnection(cs);
+        return await DB.CountAsync<Alarm>(a => a.Timestamp >= DateTime.UtcNow.AddDays(-1));
+    }
 }

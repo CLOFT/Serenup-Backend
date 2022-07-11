@@ -4,5 +4,5 @@ namespace CLOFT.SerenUp.AppCore.Interfaces.Repositories;
 
 public interface IAlarmsRepository : IRepositoryBase<Alarm, Guid>
 {
-    
+    Task<long> CountLastDayAsync();
 }

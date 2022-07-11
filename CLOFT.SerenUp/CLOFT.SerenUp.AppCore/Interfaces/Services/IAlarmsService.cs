@@ -7,4 +7,5 @@ public interface IAlarmsService
     Task<IEnumerable<Alarm>> GetAllAlarmsAsync();
     Task<Guid> InsertAlarmAsync(Alarm entity);
     Task<long> CountAlarmsAsync();
+    Task<long> CountLastDayAlarmsAsync();
 }
