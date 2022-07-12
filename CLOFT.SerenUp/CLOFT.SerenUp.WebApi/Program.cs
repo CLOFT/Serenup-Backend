@@ -36,6 +36,8 @@ builder.Services.AddSingleton<IAlarmsRepository, AlarmsRepository>();
 builder.Services.AddSingleton<IAlarmsService, AlarmsService>();
 builder.Services.AddSingleton<IUsersRepository, UsersRepository>();
 builder.Services.AddSingleton<IUsersService, UsersService>();
+builder.Services.AddSingleton<IUsersSecureContactsRepository, UsersSecureContactsRepository>();
+builder.Services.AddSingleton<IUsersSecureContactsService, UsersSecureContactsService>();
 
 // Add AWS Lambda Hosting
 builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
