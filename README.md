@@ -8,3 +8,6 @@ Amazon.Lambda.AspNetCoreServer.Hosting
 dotnet tool install -g Amazon.Lambda.Tools
 ### Command for deploy
  dotnet lambda deploy-function [lambda-name]
+
+## Enviroment Variables
+ConnectionString="Postgresql DB connection string"
