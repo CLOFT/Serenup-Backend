@@ -1,4 +1,5 @@
-﻿using RepoDb.Attributes;
+﻿using System.Data;
+using RepoDb.Attributes;
 
 namespace CLOFT.SerenUp.Domain.Models;
 
@@ -12,5 +13,6 @@ public class User
 
     public string Username { get; set; }
     public string Role { get; set; }
+    [TypeMap(DbType.DateTime2)] 
     public DateTime Birth { get; set; }
 }
